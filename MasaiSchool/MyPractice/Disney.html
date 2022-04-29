@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <style>
+    #slider>img{
+        width:1700px;
+        height:800px;
+    }
+    #slider{
+      margin:50px
+    }
+      body{
+        background-color:#131A27
+      }
+    input {
+        border:none;
+        background-color:#131A27;
+      width: 200px;
+      color:white
+    }
+    img{
+        overflow: hidden;
+        height:280px;
+        width:190px;
+        margin:20px;
+        margin-bottom: -10px;
+
+    }
+    p{
+      background-color: green;
+      color:white;
+      margin-top: -10px;
+      padding:5px 10px;
+      width:100px;
+     margin-left: 70px;
+    }
+    #movies>div{
+        box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+        width:250px;
+        height:420px;
+        line-height:3px;
+        background-color: white;
+        text-align: center;
+    }
+    
+    #movies {
+      margin-left:300px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(5,1fr);
+      background-color:#131A27;
+      gap:20px;
+
+    }
+    #header{
+        height:80px;
+        background:white;
+    }
+    
+    input{
+        margin-top: 20px;
+        margin-left: 1600px;
+        padding:10px 15px;
+    }
+  </style>
+
+  <body>
+      <div id="header">
+        <input  oninput="debounce(main,3000)" type="text" placeholder="Search" id="query">
+      </div>
+
+   <div id="slider">
+     <img  id="slideimage"/>
+   </div>
+
+    <div id="movies"></div>
+
+
+  </body>
+
+</html>
+
+<script src="/index.js"></script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        #textarea{
+            margin:20px
+        }
+        button{
+            color:white;
+            background: green;
+            border:none;
+            padding:5px 10px
+        }
+    </style>
+</head>
+<body>
+    <div id="order-form">
+        <input type="text" placeholder="Name"/>
+        <input type="number" placeholder="Number"/>
+        
+    </div>
+    <textarea name="Address" id="textarea" cols="30" rows="10" placeholder="Enter Address"></textarea>
+  <button id="checkout">Submit</button>
+</body>
+</html>
+<script>
+    var total=localStorage.getItem("total")
+    var checkout=document.getElementById("checkout")
+     checkout.onclick=function(event){
+        setTimeout(function print(){
+            alert("Order placed");
+        },0) 
+        setTimeout(function print(){
+            alert("Thank you for the purchase."+" "+"   It will be deliverd within 30 mints");
+        },2000) 
+        setTimeout(function print(){
+            alert("Happy To serve you");
+        },4000) 
+
+     }
+</script>

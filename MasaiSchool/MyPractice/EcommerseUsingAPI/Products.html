@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <style>
+        body{
+            background:whitesmoke
+        }
+        #head{
+            width: 100%;
+            height:80px;
+            background:white;
+            border:1px solid white;
+            justify-content: space-evenly;
+            display:flex;
+
+        }
+        a{
+            text-decoration: none;
+            
+        }
+       #cart>a>img{
+            width:60px;
+            height:50px; 
+           margin-left:1600px;
+           margin-top:10px;
+        }
+        #head>p{
+            margin-top:30px;
+            font-weight:bold;
+        }
+        #shorting>select{
+            margin: 20px;
+            display: flex;
+            align-items: right;
+            justify-content: end;
+        }
+        #container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        width: 90%;
+        margin: auto;
+        margin-top: 20px;
+      }
+      #container>div>img{
+         
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+      
+      }
+      #container > div {
+        padding: 10px;
+        border: 1px solid white;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+       .text-align-center {
+        text-align: center;
+      }
+        h1{
+            color:tomato;
+            font-size:60px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-top: -1px;
+        }
+        #div1{
+            width:400px;
+            border: 1px solid white;
+            display:flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div id="head">
+        <h1>Fashion</h1>
+        <div id="cart"> 
+            <a href="Cart.html"><img  src="https://cdn-icons-png.flaticon.com/512/3081/3081840.png"/></a>
+        </div> 
+        <p id="CartCount"></p>
+    </div>
+    <div id="shorting">
+        <select name="sort" id="sortbutton" onchange="sortProducts()">
+           <option value="">Sort</option>
+             <option value="asc">High-Low</option>
+             <option value="desc">Low-High</option>
+      </select>
+      <select name="filter" id="filterbutton" onchange="filterProducts()">
+          <option value="">Filter</option>
+            <option value="0-50">0 - 50</option>
+            <option value="51-150">51 - 150</option>
+            <option value=">150">Greater than 151</option>
+     </select>
+     <div id="container">
+
+     </div>
+       
+ </div>
+</body>
+<script src="products.js"></script>
+</html>

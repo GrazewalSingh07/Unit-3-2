@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="movie" placeholder="Movie Name"/>
+    <input id="releasedate" placeholder="Release Date"/>
+    
+    <input id="url" placeholder="URL"/>
+    <input id="rating" type="number"placeholder="Rating"/>
+    
+   <button onclick= "Movie()">Submit</button>
+</body>
+</html>
+<script>
+    var moviearr=JSON.parse(localStorage.getItem("Database"))||[]
+    function Movie(){
+        var name=document.querySelector("#movie").value
+        var url=document.querySelector("#url").value 
+        var rating=document.querySelector("#rating").value
+        var releasedate=document.querySelector("#releasedate").value
+        var movieobj={
+            name:name,
+            url:url,
+            rating:rating,
+            releasedate:releasedate
+        }
+        moviearr.push(movieobj) 
+        localStorage.setItem("Database", JSON.stringify(moviearr))
+        document.querySelector("#movie").value=""
+        document.querySelector("#url").value=""
+        document.querySelector("#rating").value=""
+        document.querySelector("#releasedate").value=""
+        
+    }
+console.log(moviearr)
+</script>

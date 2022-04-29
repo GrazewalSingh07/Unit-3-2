@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+</head>
+<style>
+.mapouter{
+    /* position:relative; */
+    text-align:right;
+    height:200px;
+    width:300px;
+    margin-left: 1500px;
+    margin-top: -100px;
+    }
+    body{
+        background-image: url("https://freerangestock.com/sample/52886/raining-sky-background-means-rainy-weather-or-storms-.jpg");
+        background-repeat: no-repeat; 
+        background-size: cover;
+    }
+    input{
+        background:lightcyan;
+        border:none;
+        padding:5px 10px;
+        color:black;
+        margin: 10px;
+    }
+    button{
+       
+        padding: 5px 20px;
+        background-color: greenyellow;
+        border: none;
+    }
+    #time{
+        font-size: 50px;
+        color:rgb(48, 134, 220)
+    }
+    #date{
+        font-size: 20px;
+        color:rgb(48, 134, 220)
+    }
+    img{
+        width:300px;
+        margin-left:50px
+    }
+    #image{
+        display: flex;
+        margin-top: 100px;
+    }
+    #time{
+        text-align: center;
+        margin-top: 100px;
+       margin-left: 20px;
+    }
+    #date{
+        text-align: center;
+        margin-top: 130px;
+       margin-left: 20px;
+    }
+    #container{
+        margin-left:100px;
+    }
+    p{
+        font-size: 20px;
+        color:rgb(48, 134, 220)
+    }
+    #container>div:nth-child(1){
+        font-size: 30px;
+    }
+    #inputsection{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+    }
+    </style>
+    
+</style>
+<body>
+    <div id="inputsection">
+        <input type="text" id="city" placeholder="City Name"/>
+        <button onclick="getWeatherData()">Search</button>
+    </div>
+   
+    <div id="image"></div>
+    <div id="container">
+
+        
+    </div>
+
+    <div class="mapouter">
+        <div class="gmap_canvas">
+            <iframe width="300" height="200" id="gmap_canvas" frameborder="0px" scrolling="no" marginheight="0" marginwidth="0">
+
+            </iframe>
+         </div>
+    </div>
+</body>
+
+</html>
+<script >
+    let key="e4c70ce6a6821649a416cb9521d5f4f8"
+
+async function getWeatherData(){
+  
+    try{ 
+        let city=document.getElementById("city").value
+        let res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`);
+
+        let data=await res.json();
+        showweather(data)
+         console.log(data)
+    }
+    catch(err){
+        console.log("err",err)
+    }
+}
+
+
+function showweather(d){
+    document.querySelector("#container").innerHTML=null
+    document.getElementById("image").innerHTML=null
+    let time=document.createElement('h1')
+    time.setAttribute("id","time")
+    mytime=new Date()
+    time.textContent=mytime.getHours() + ":" + mytime.getMinutes() + ":" + mytime.getSeconds();
+    let name=document.createElement('p')
+    name.innerText=d.name;
+    let date=document.createElement('h1')
+    date.setAttribute("id","date")
+    mydate= new Date();
+    date.textContent = mydate.getFullYear()+'-'+(mydate.getMonth()+1)+'-'+mydate.getDate();
+    let temp=document.createElement('p')
+    temp.innerText="Feels like"+ ":" +" "+d.main.temp;
+
+    let humidity=document.createElement('p')
+    humidity.innerText="Humidity"+ ":" +" "+d.main.humidity;
+
+    let pressure=document.createElement('p')
+    pressure.innerText="Pressure"+ ":" +" "+d.main.pressure;
+    let div=document.createElement("div");
+
+    let image=document.createElement("img");
+    if(d.weather[0].description=="clear sky"){
+        image.src="clearsky.png"
+        }
+    else if(d.weather[0].description=="haze"){
+        image.src="scatteredclouds.png"
+    }
+   
+    else if(d.weather[0].description=="scattered clouds"){
+        image.src="rainbow"
+    }
+    else if(d.weather[0].description=='overcast clouds'){
+        image.src="overcast.png"
+    }
+   else if(d.main.temp<0){
+       image.src="cold.png"
+   }else{
+       image.src="rainbow.png"
+   }
+    div.setAttribute("id","mydata")
+    document.getElementById("image").append(image,time,date)
+    div.append(name,temp,humidity,pressure)
+    document.querySelector("#container").append(div)
+    document.querySelector("iframe").src=`https://maps.google.com/maps?q=${d.name}&t=&z=13&ie=UTF8&iwloc=&output=embed`
+    document.querySelector("iframe").frameBorder="10px"
+}
+
+   
+</script>
+ 

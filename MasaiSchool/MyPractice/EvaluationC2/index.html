@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        #navbar{
+            
+            height:80px;
+            background-color: azure;
+            border:1px solid white;
+            display: flex;
+            
+            margin: 10px;
+             
+        }
+        #right{
+            margin-left:600px;
+            display:flex;
+            justify-content: right;
+            align-items:flex-end;
+        }
+        #navbar>#right{
+            margin-left: 1300px;
+        }
+        h4{
+            margin:20px
+        }
+        img{
+            width:300px;
+            height:250px;
+            margin-left:30px
+          
+        }
+        #menu{
+            display:grid;
+            grid-template-columns: repeat(5,1fr);
+            grid-template-rows: repeat(5,1fr);
+            gap:20px
+
+        }
+        #menu>div{
+           
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        }
+        a{
+            text-decoration: none;
+            color:black;
+            margin-right:20px
+        }
+        #menu>div> p,h3{
+            text-align: center;
+        }
+        #menu>div>button{
+            margin-left:60px;
+            margin-bottom: 10px;
+            background-color: green;
+            color:white;
+            border: none;
+            padding:5px 10px
+        }
+        #menu>div>button:hover{
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div> <h1 align="left">Hungers Point</h1></div>
+       <div id="right">
+        <h4  id="count"></h4>
+        <a href="cart.html"><h2 >Cart</h2></a>
+        <a href="Signin.html"><h4>Sign-in</h4></a>
+        <a href="Signup.html"><h4>Sign-up</h4></a>
+    </div>
+        
+    </div>
+    <div id="menu">
+
+    </div>
+</body>
+</html>
+<script>
+     let cart=localStorage.getItem("cart");
+             if(!cart){
+                 cart=[];
+                 localStorage.setItem("cart",JSON.stringify(cart))
+             }
+             else{
+                 cart=JSON.parse(cart)
+                 refreshCart(cart)
+             }
+             console.log(cart)
+
+    function refreshCart(cart){
+        document.getElementById("count").innerText=cart.length
+    }
+    async function Dishes(){
+        try {
+            let dishes= await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=Indian`)
+            var data=await dishes.json().then(data)
+            
+           var Mydishes=data.meals
+           console.log(Mydishes)
+           RenderDishes(Mydishes)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    Dishes()
+
+    function RenderDishes(Mydishes){
+        document.getElementById("menu").innerHTML="";
+
+         Mydishes.forEach(function Card(elem){
+        var div=document.createElement("div")
+        var image=document.createElement("img")
+        var price=document.createElement("p")
+        var Price=Math.floor(Math.random()*500)
+        price.textContent="INR"+ " "+Price+"/-"
+        elem["price"]=Price 
+        
+        var name=document.createElement("h3")
+        var btn=document.createElement("button")
+        btn.setAttribute("id","AddToCart")
+        btn.onclick=function(event){
+            AddToCart()
+        }
+        function AddToCart(){
+            let cart=localStorage.getItem("cart");
+             if(!cart){
+                 cart=[];
+                 localStorage.setItem("cart",JSON.stringify(cart))
+             }
+             else{
+                 cart=JSON.parse(cart)
+                cart.push(elem)
+                refreshCart(cart)
+                localStorage.setItem("cart",JSON.stringify(cart))
+                alert(elem.strMeal+" "+ "Added To cart")
+                
+             }
+        }
+            btn.textContent="Add to cart"
+            image.src=elem.strMealThumb
+            name.textContent=elem.strMeal
+            
+            div.append(image,name,price,btn)
+            document.getElementById("menu").append(div);
+         })
+         
+    }
+  
+</script>

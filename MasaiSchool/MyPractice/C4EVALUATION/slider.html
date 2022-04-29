@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+</head>
+<style>
+    .parent{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height:400px;
+        transition: transform 5s;
+    }
+    .child{
+       
+      
+        margin-left: 20px;
+        margin-right: 10px;
+         display: none;
+         transition: transform ease-out 0.3s;
+        
+    }
+    .child img{
+        height: 400px;
+        width: 400px;
+        margin-left: 20px;
+        margin-right: 10px;
+       
+    }
+    #leftarrow ,#rightarrow{
+        margin-left:12px;
+        width:5%;
+        display:inline-block
+    }
+    #leftarrow button, #rightarrow button{
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 50px;
+    }
+       
+</style>
+<body onload="show(1)">
+     
+    <div class="parent">
+    <div id="leftarrow" onclick="leftarrow()">
+        <button>&lt;</button>
+    </div>
+       <div class="child" id="C1">
+            <div >
+            <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"/>
+             </div>
+            <div >
+                <img src="https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg"/>
+            </div>
+            <div  >
+                <img src="https://images.unsplash.com/photo-1612151855475-877969f4a6cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGQlMjBpbWFnZXxlbnwwfHwwfHw%3D&w=1000&q=80"/>
+            </div>
+         </div>
+    <!-- <div id="rightarrow" onclick="right()">
+    <button>&gt;</button>
+    </div> -->
+         <div class="child" id="C2">
+                <div   >
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"/>
+                </div>
+                <div    >
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"/>
+                </div>
+                <div   >
+                    <img src="https://images.unsplash.com/photo-1612151855475-877969f4a6cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGQlMjBpbWFnZXxlbnwwfHwwfHw%3D&w=1000&q=80"/>
+                </div>
+            </div>
+        <div class="child" id="C3">
+                <div   >
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"/>
+                </div>
+                <div    >
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"/>
+                </div>
+                <div >
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"/>
+                </div>
+         </div>
+         <div id="rightarrow" onclick="rightarrow()">
+            <button>&gt;</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var left=1;
+    var previous=0;
+    function show(left){
+         
+        document.getElementById("C"+left).style.display="flex" 
+       
+       
+        
+    }
+     
+    function leftarrow(){
+        if(left>1){
+            left--
+        previous=left+1
+        
+        document.getElementById("C"+previous).style.display="none" 
+        show(left)
+        }
+      else{
+          return
+      }
+        
+    
+    }
+    function rightarrow(){
+        
+        if(left<3){
+            left++
+        previous=left-1
+       
+        // document.getElementById("C"+previous).style.transform = "translate(10%)";
+        document.getElementById("C"+previous).style.display="none" 
+        show(left)
+        }
+        
+         
+         
+        
+    }
+</script>

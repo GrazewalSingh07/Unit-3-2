@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+      
+      #container{
+        
+        display: flex;
+          height:600px
+      }
+      #input-sectiom{
+        flex:1;
+        margin:5%;
+        border:solid black 1px;
+
+      }
+       #output-section{
+        flex:1;
+        margin:5%;
+        border:solid black 1px;
+       }
+      #input-text{
+          width:100%;
+          height:80%
+      }
+      div{
+         
+          height:300px;
+      }
+  </style>
+
+  <body>
+    <div id="container">
+      <div id="input-section">
+       
+       <!-- <h4>Input-Section</h4> -->
+        <!--Create button that will run translate text function, give id "translate-btn"-->
+
+        <button onclick="translateText()" id="translate-btn">Translate</button>
+        <!--Create input that will accept text to be translated, give id "input-text"-->
+        <textarea type="text" id="input-text"></textarea>
+      </div>
+      <div id="output-section">
+        <p id="translated-text">
+          <!--Show translated text here-->
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+async function translateText(){
+    try {
+
+        let input=document.getElementById("input-text").value
+    let res=await fetch("https://libretranslate.de/translate",{
+        method:"POST",
+        body:JSON.stringify({
+            q:input,
+            source:"en",
+            target:"hi",
+            formate:"text",
+        }),
+         headers: {
+        // "accept":"application/json",
+        "Content-Type":"application/json",
+        },
+    });
+  let data=await res.json();
+  mydata=data.translatedText;
+  document.getElementById("translated-text").textContent=mydata
+    } 
+    catch (error) {
+        console.log(error)
+    }
+   
+}
+</script>

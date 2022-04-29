@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+</head>
+<style>
+#head{
+    text-align: center;
+}
+img{
+    width:100px
+}
+#cart>div{
+    display: flex;
+}
+#cart>div>img,h2,p,button{
+    margin:20px
+}
+#cart button{
+    background-color: red;
+    height:30px
+}
+button{
+   
+    color:white;
+    background-color: green;
+    border: none;
+    padding:5px 10px 5px 10px;
+}
+#checkout{
+    margin-left: 300px;
+}
+#checkout:hover{
+    font-size:20px;
+}
+</style>
+    
+
+<body>
+    <h2 id="head">My Cart</h2>
+    
+    <div id="cart"></div>
+    <h2 id="total"></h2>
+    <button id="checkout">Checkout</button>
+</body>
+</html>
+<script>
+
+let cart=localStorage.getItem("cart");
+             if(!cart){
+                 cart=[];
+                 localStorage.setItem("cart",JSON.stringify(cart))
+             }
+             else{
+                 cart=JSON.parse(cart)
+                
+             }
+             console.log(cart)
+    let mycart=JSON.parse(localStorage.getItem("cart"))
+    var totalsum
+     
+    function renderCart(mycart){
+        document.getElementById("cart").innerHTML="";
+        mycart.forEach(function(elem){
+        var div=document.createElement("div")
+        var image=document.createElement("img")
+        var price=document.createElement("p")
+        var name=document.createElement("h3")
+        image.src=elem.strMealThumb
+        name.textContent=elem.strMeal
+        price.textContent=elem.price;
+        var btn=document.createElement("button")
+        btn.textContent="Remove from Cart"
+        btn.setAttribute("id","RemoveFromCart")
+        
+        btn.onclick = function(event){
+            RemoveFromCart()
+        }
+        function RemoveFromCart(){
+           var pos= mycart.indexOf(elem)
+           
+            mycart.splice(pos,1)
+            localStorage.setItem("cart",JSON.stringify(mycart))
+            
+            var totalsum=mycart.reduce(function sum(acc,cv){ 
+            return  acc+cv.price
+        },0)
+        
+      localStorage.setItem("total", totalsum)
+     document.getElementById("total").textContent=totalsum
+            renderCart(mycart)
+            alert(elem.strMeal+" "+"Removed from cart")
+        }
+        div.append(image,name,price,btn)
+        document.getElementById("cart").append(div)
+        })
+        
+    }
+    renderCart(mycart)
+
+    
+     
+    var totalsum=mycart.reduce(function sum(acc,cv){ 
+            return  acc+cv.price
+        },0)
+     
+       console.log(totalsum)
+    
+   
+      localStorage.setItem("total", totalsum)
+     document.getElementById("total").textContent=totalsum
+     var checkout=document.getElementById("checkout")
+     checkout.onclick=function(event){
+         window.location.href="Checkout.html"
+     }
+</script>

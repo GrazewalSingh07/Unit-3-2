@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- Create a form that accepts Student's Name, number and city on index.html
+Accept the values and create a Student Constructor function to create a student object.
+Constructor function will have form input values as its arguments.
+All the created objects will be pushed into an Array.
+This Array will be stored into LocalStorage. -->
+
+<body>
+    <form>
+        <input id="name" type="text" placeholder="Student's name"/>
+        <input id="number" type="number" placeholder="Contact number"/>
+        <input id="city"type="text" placeholder="city"/>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
+<script>
+    
+ document.querySelector("button").addEventListener("click",myfun);
+    var mystudents=JSON.parse(localStorage.getItem("Students"))||[];
+  function myfun(event){
+    event.preventDefault();
+    // console.log("Hi")
+    var a=document.querySelector("#name").value;
+    var b=document.querySelector("#number").value;
+    var c=document.querySelector("#city").value;
+    var curstd=new student(a,b,c);
+    mystudents.push(curstd);
+    localStorage.setItem("Students", JSON.stringify(mystudents));
+    window.location.href="students.html"
+}
+
+  function student(name, number, place){
+      this.Name=name;
+      this.Number=number;
+      this.City=place;
+  }
+//   console.log(mystudents);
+</script>

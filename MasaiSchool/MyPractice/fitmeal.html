@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav{
+    position:relative;
+    width:80%;
+    height:45px;
+    line-height:15px;
+    margin-top:110px;
+    margin-left:500px;
+    background:white;
+}
+nav .wrapper{
+    position:absolute;
+    padding:0 30px;
+    margin:auto;
+    display:flex;
+    /* align-items:center; */
+    justify-content: space-between;
+    
+}
+.nav-links li{
+    list-style:none;
+}
+
+
+.wrapper .nav-links{
+    display:inline-flex;
+    
+}
+.nav-links li a{
+    width:100px;
+ color:black;
+ text-decoration:none;
+ font-size: 20px;
+ font-weight: 1000;
+ padding:9px 15px;
+ transition: all 0.3s ease;
+ 
+}
+.nav-links li a:hover{
+     color: chartreuse;
+    border-radius: 10px;
+    
+    
+}
+.nav-links .subdivision{
+    color: chartreuse;
+    width:300px;
+   
+    line-height: 45px;
+    position:absolute;
+    opacity:0;
+    visibility:hidden;
+    
+
+}
+.nav-links li:hover .mega-box,
+.nav-links li:hover .subdivision{
+    top:10px;
+    opacity:1;
+    visibility: visible;
+    
+    
+}
+.nav-links header:hover{
+    background-color: chartreuse;
+    border-radius: 10px;
+    /* color:white; */
+}
+.row header a:hover{
+    color:white;
+    background-color: chartreuse;
+  
+}
+.subdivision li a{
+    width:auto;
+    display: block;
+    padding: 0 0 0 15px;
+    font-weight: 400;
+    border-radius: 0px;
+}
+.mega-box{
+  
+    position:relative;
+    top:70px;
+    align-items: center;
+    left:0;
+    opacity:0;
+    visibility:hidden;
+    /* transition: all 0.3s ease; */
+}
+.mega-box .content{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    padding:5px 2px;
+    display:flex;
+    width:300px;
+    height:auto;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+
+.content .row{
+    width:200px;
+    margin-right: -120px;
+    line-height:60px;
+    background: white;
+}
+.content .row header{
+    width:300px;
+    font-weight:bold;
+    font-size: 16px;
+    /* text-align:center */
+}
+.content .row .mega-links{
+    margin-left: -40px;
+    border-left:1px solid rgba(255,255,255,0.09);
+    
+}
+.content .row:nth-child(1), .content .row:nth-child(2){
+    border-left:0px;
+    
+}
+.row .mega-links li{
+    padding:0 10px;
+    
+}
+.row .mega-links li a{
+    padding:0 5px;
+    color:grey;
+    font-size: 40px;
+    display:block;
+    width:200px;
+    }
+    
+.mega-links li a:hover, .mega-links header a:hover{
+    color:#FF6F61;
+  
+}
+
+.content{
+    position: fixed;
+
+    
+}
+    </style>
+</head>
+<body>
+    <nav>
+    
+            <div class="wrapper">
+                <ul class="nav-links">
+                <li>
+                <a href="#">Home</a>
+                </li>
+                    <li>
+                        <a href="#">Meal Plans</a>
+                        <div class="mega-box">
+                            <div class="content">
+                                <div class="row">
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">Weight Loss Meal Plans</a>
+                                        </header>
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">Maintenance Meal Plans</a>
+                                        </header>
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">Athletic Meal Plans</a>
+                                        </header>
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">Keto Meal Plans</a>
+                                        </header>
+                                </div>
+    
+                            </div>
+                        </div>
+                        
+                    </li>
+                    
+                    <li>
+                        <a href="#">Health Coaching</a>
+                    </li>
+                    <li>
+                        <a href="#">Products</a>
+                        <div class="mega-box">
+                            <div class="content">
+                                <div class="row">
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">Vegan Sweets</a>
+                                        </header>
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">Low Cal Sauces</a>
+                                        </header>
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">Nut Butter</a>
+                                        </header>
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">Fresh Bakes</a>
+                                        </header>
+                                </div>
+    
+                            </div>
+                        </div>
+                        
+                    </li>
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+                </li>
+                <li>
+                    <a href="#">About Us</a>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">Our Story</a>
+                                    </header>
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">FAQ</a>
+                                    </header>
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">Testimonials</a>
+                                    </header>
+                                    
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </li>
+        </div>
+    </nav>
+</body>
+</html>

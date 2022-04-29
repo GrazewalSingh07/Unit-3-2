@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <style>
+        #main{
+            width:1800px;
+            height:900px;
+            border:1px solid skyblue;
+            margin:20px;
+        }
+        #Head{
+            margin-top: 20px;
+            margin-left: 25px;
+            height:5%;
+            width: 96%;
+            border: 1px solid black
+        }
+        button{
+            border:none;
+            background-color: white;
+            padding:5px 10px;
+            margin:10px
+            
+        }
+        button:hover{
+            font-size: 20px;
+            text-shadow: 2px 2px 5px black;
+            
+        }
+        #Head>div{
+            margin-left:1400px;
+            margin-top: 5px;
+        }
+       
+        #myBody>div{
+            border: 1px solid white;
+            border-radius: 10px;
+           margin-left:800px;
+           margin-top:100px;
+            width:400px;
+            height:300px;
+            /* border: 1px solid black; */
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            text-align: center;
+            
+        }
+        input{
+            margin:10px 50px;
+        }
+       h1{
+           font-weight: bolder;
+       }
+       #submit{
+            padding:5px 20px;
+            background-color: teal;
+            color: white;
+            border: 0px;
+            border-radius: 5px;
+       }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="Head">
+            <div>
+             <button onclick="Home()"> Home</button>
+            <button onclick="Signup()">Signup</button>
+            <button onclick="Login()">Login</button>
+            </div>
+            
+        </div>
+        <div id="myBody">
+           <div>
+                <div style="margin-top:40px;">
+                    <h1>Login</h1>
+                    <div style="margin-top:50px;">
+                        <input id="email" type"text" placeholder="Enter your Email"/>
+                        <input id="pass" type"text" placeholder="Enter your Password"/>
+                       <form><input id="submit" type="submit"/></form> 
+                    </div>
+               </div>
+               
+              
+           </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
+<script>
+      document.querySelector("form").addEventListener("submit", formsubmit)
+    var database=JSON.parse(localStorage.getItem("userDatabase"))||[];
+    function formsubmit(event){
+        event.preventDefault();
+       
+        var enteredemail=document.querySelector("#email").value;
+        var pass=document.querySelector("#pass").value;
+        if ( email!="" && pass!=""){
+
+            for(var i=0;i<database.length;i++){
+                 
+                if(database[i].Email==enteredemail && database[i].Password==pass){
+                    alert("Login Sucessful");
+                    window.location.href="index.html";
+                }
+                else{
+                    alert("wrong details")
+                }
+            }
+        }
+         else {
+         alert("Authentication Error, Please Sign-Up or check the entered information");
+                 
+            }
+        }
+    function Home(){
+        window.location.href="index.html"
+    }
+    function Signup(){
+        window.location.href="SignUp.html"
+    }
+    function Login(){
+        window.location.href="Login.html"
+    }
+</script>
+
+
+
+
+
+
+
+

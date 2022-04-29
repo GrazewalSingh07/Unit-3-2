@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var a="marvel"
+    async function searchmovie(){
+    try {
+        // let movie=document.getElementById("query").value;
+        let res = await fetch(`https://www.omdbapi.com/?apikey=d806bd70&s=${a}`)
+        let data=await res.json();
+        console.log(data.Search)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    searchmovie()
+</script>

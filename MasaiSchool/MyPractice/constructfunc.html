@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var array=new myarr(1,2,3,4)
+
+function myarr(){
+    Object.defineProperty(this,"length",{
+        writable:true,
+        enumerable:false
+    })
+    for(let i=0;i<arguments.length;i++){
+        this[i]=arguments[i]
+         this.length=arguments.length
+    }
+     
+}
+
+myarr.prototype.PusH=function(a){
+   let index=this.length
+   this[index]=a
+   this.length++;
+
+}
+
+
+
+
+myarr.prototype.ReversE=function(){
+
+var arr=[];
+for(var i=this.length-1;i>=0;i--){
+    arr.push(this[i])
+}
+console.log(arr)
+
+}
+myarr.prototype.firstelem=function(){
+
+   console.log(this[0]) ;
+}
+
+
+
+
+array.PusH(2);
+array.firstelem();
+console.log(Object.values(array))
+array.ReversE();
+Object.values(array)
+
+</script>

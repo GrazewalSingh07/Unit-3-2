@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Pharmacy India | Buy Medicines from India's Trusted Medicine Store: 1mg.com</title>
+    <style>
+        body{
+            background:#F6F6F6;
+        }
+     .flex{
+         display:flex
+     }
+     .flex>h5{
+         padding:2px 4px;
+         background:orange;
+         color:white
+     }
+     #H1{
+        margin-left:40px;
+        display:flex;
+        justify-content: space-evenly;
+        
+     }
+     .head{
+         border:1px solid white
+     }
+    
+     #H1>h4{
+         margin:10px;
+        padding:2px 4px;
+     }
+     
+     #div{
+         border: 1px solid white;
+     }
+     #div>h4,h5{
+         margin:10px;
+     }
+     .head{
+         /* display:flex; */
+         justify-content: space-between;
+     }
+     .flex>p{
+         /* margin-bottom:10px; */
+         padding:5px 10px
+     }
+     img{
+         margin-top:10px
+     }
+     #logo{
+         margin-left:30px;
+         margin-top: -8px;
+         height:50px;
+         width:90px
+     }
+     #H1>p{
+         height:15px;
+         margin-left:-10px;
+         margin-bottom:5px;
+     }
+     #Head1>.flex>button{
+         background:#FF6F61;
+         color:white;
+         font-size:15px;
+         border:0px;
+         border-radius:5px;
+     }
+    #Head1{
+        justify-content: space-around;
+    }
+    body>div{
+        background:white
+    }
+/* 
+sliding window */
+.slider{
+            width:1200px;
+            height:260px;
+            overflow:hidden;
+        }
+       .picdiv{
+           width:100%;
+           height:500px;
+           border-radius: 10px;
+           display:flex;
+       
+           
+       }
+       .picdiv>div{
+          width:1200px;
+       }
+       .picdiv input{
+           display: none;
+       }
+       .slide{
+           width:80%; 
+            transition: 1s;
+       }
+       .slide div{
+           width:1000px;
+           height:500px
+       }
+
+       /* css for manual navigation */
+       .navigation-manual{
+        position:absolute;
+        width:400px;
+        margin-top: -380px;
+        display:flex;
+        justify-content: center;
+         margin-left:400px;
+       }
+       .manual-btn{
+           background-color:#bdbbbb;
+           border: 0px;
+           padding:5px;
+           
+           border-radius:10px;
+           cursor: pointer;
+           transition: 2s;
+       }
+       .manual-btn:not(:last-child){
+           margin-right:40px;
+
+       }
+       .manual-btn:hover{
+           background-color:#7A7575 ;
+       }
+       #radio1:checked ~ .first{
+        margin-left:0px;
+       }
+       #radio2:checked ~ .first{
+        margin-left:-1205px;
+       }
+       #radio3:checked ~ .first{
+        margin-left: -2400px;
+       }
+       #radio4:checked ~ .first{
+        margin-left: -3600px
+       }
+       #radio5:checked ~ .first{
+        margin-left: -4900px;
+       }
+       #radio6:checked ~ .first{
+        margin-left:-6000px;
+       }
+       #radio7:checked ~ .first{
+        margin-left: -7200px;
+       }
+       #radio8:checked ~ .first{
+        margin-left: -8400px
+       }
+       #radio9:checked ~ .first{
+        margin-left: -9580px;
+       }
+
+
+       /* css auto */
+       .navigation-auto{
+        position: absolute;
+        display: flex;
+        width:800px;
+        justify-content: center;
+        margin-top: 460px;
+       }
+
+       .navigation-auto div{
+           border:2 px solid #7A7575;
+           /* padding:5px; */
+           border-radius: 10px;
+           transition: 1s;
+       }
+
+       .navigation-auto div:not(:last-child){
+           margin-right: 40px;
+       }
+       #radio1:checked~ .navigation-auto .auto-butn1{
+        background-color: #7A7575;
+       }
+        #radio2:checked~ .navigation-auto .auto-butn2{
+            background-color: #7A7575;
+        }
+
+       #radio3:checked~ .navigation-auto .auto-butn3{
+        background-color: #7A7575;
+        }
+
+        #radio4:checked~ .navigation-auto .auto-butn4{
+            background-color: #7A7575;
+        }
+
+        #radio5:checked~ .navigation-auto .auto-butn5{
+            background-color: #7A7575;
+        }
+
+/* .headimage{
+    display: flex;
+    width:100%;
+} */
+
+#H1 >h4 a:hover,p a:hover{
+color:tomato;
+
+}
+#H1>h4 a, p a{
+    text-decoration: none;
+    color:black
+}
+
+
+/* //////////////////////////////// */
+         /* navbar start */
+*{
+    /* margin:0;
+    padding:0; */
+    box-sizing:border-box;
+    /* font-family:'Times New Roman', Times, serif */
+}
+nav{
+    position:relative;
+    width:80%;
+    /* z-index:999; */
+    height:45px;
+    line-height:15px;
+    margin-left:250px;
+    background:white;
+}
+nav .wrapper{
+    position:absolute;
+    padding:0 30px;
+    margin:auto;
+    display:flex;
+    /* align-items:center; */
+    justify-content: space-between;
+}
+.nav-links li{
+    list-style:none;
+}
+
+
+.wrapper .nav-links{
+    display:inline-flex;
+}
+.nav-links li a{
+ color:black;
+ text-decoration:none;
+ font: size 18px;
+ font-weight: 500;
+ padding:9px 15px;
+ transition: all 0.3s ease;
+}
+.nav-links li a:hover{
+    color:#FF6F61;
+    
+}
+.nav-links .subdivision{
+    background: white;
+    width:300px;
+   
+    line-height: 45px;
+    position:absolute;
+    opacity:0;
+    visibility:hidden;
+
+}
+.nav-links li:hover .mega-box,
+.nav-links li:hover .subdivision{
+    top:10px;
+    opacity:1;
+    visibility: visible;
+    
+    
+}
+.subdivision li a{
+    width:auto;
+    display: block;
+    padding: 0 0 0 15px;
+    font-weight: 400;
+    border-radius: 0px;
+}
+.mega-box{
+    position:relative;
+    top:70px;
+    width:auto;
+    align-items: center;
+    left:0;
+    opacity:0;
+    visibility:hidden;
+    /* transition: all 0.3s ease; */
+}
+.mega-box .content{
+    
+    padding:5px 2px;
+    display:flex;
+    width:300px;
+    height:auto;
+    justify-content: space-between;
+}
+.mega-box .content .row{
+    width:auto;
+    display: block;
+    padding: 0 0 0 15px;
+    font-weight: 300;
+    border-radius: 0px;
+}
+.content .row{
+    margin-right: -120px;
+    line-height:25px;
+    background: white;;
+}
+.content .row header{
+    width:300px;
+    font-weight:bold;
+    font-size: 14px;
+}
+.content .row .mega-links{
+    margin-left: -40px;
+    border-left:1px solid rgba(255,255,255,0.09);
+}
+.content .row:nth-child(1), .content .row:nth-child(2){
+    border-left:0px;
+}
+.row .mega-links li{
+    padding:0 10px;
+}
+.row .mega-links li a{
+    padding:0 10px;
+    color:grey;
+    font-size: 14px;
+    display:block;
+    width:200px;
+    }
+    
+.mega-links li a:hover, .mega-links header a:hover{
+    color:#FF6F61;
+  
+}
+
+.content{
+    position: fixed;
+}
+
+.headimage{
+    display:flex;
+}
+.ListDivsizesmall{
+    width:100%;
+    height:200px;
+    margin-top:60px;
+}
+.ListDivsizelarge{
+    width:100%;
+    height:400px;
+    margin-top:60px;
+}
+.boxshadow{
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px
+}
+#footer{
+    width:100%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    background:white;
+    border: 1px solid white;
+    margin-top:60px;
+    height:1050px
+
+}
+#footer p{
+    color:grey;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    /* Verdana, Geneva, Tahoma, sans-serif; */
+    font-size: 14px;
+    font-weight:500;
+    text-align: justify;
+    width:95%;
+    margin-left:30px;
+    margin-top:20px;
+    /* font-stretch:semi-condensed */
+}
+#footer h4{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: justify;
+    width:95%;
+    margin-left:30px;
+    margin-top:20px;
+    font-size: 14px;
+   
+}
+#footer h3{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: justify;
+    width:95%;
+    margin-left:30px;
+    margin-top:20px;
+    font-size:15px;
+}
+.LastHomeSubmit{
+        background:#FF6F61;
+         color:white;
+         font-size:15px;
+         border:0px;
+         border-radius:5px;
+         padding:1px 30px 1px 30px;
+}
+.lastdiv{
+        background-color: #FFFCF8;
+        width:100%;
+        height:750px;
+        border:1px solid #FFFCF8;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px
+        }
+/* external css: flickity.css */
+/*   */
+.carousel{
+    width:800px;
+    display:flex;
+    overflow:scroll;
+
+}
+
+
+
+</style>
+</head>
+</head>
+<body>
+    <div class="head flex">
+        <div class="flex">
+            <div> 
+                <a href="1mg.html"><img id="logo" src="https://www.1mg.com/images/tata_1mg_logo.svg"></img></a>
+           </div>
+           <div id="H1">
+                   <h4 style="color:#FF6F61;font-size:15px">MEDICINES</h4>
+                   
+                    <h4><a href="#">LAB TEST</a></h4>
+                    <p style="background-color:#FF6F61;text-align:center;font-size:10px;color:white;font-weight:bold">SAFE</p>
+                   
+                   <h4><a href="#">ASK DOCTOR</a></h4>
+                   <h4><a href="#">COVID-19</a></h4>
+                   <h4><a href="#">AYURVEDA</a></h4>
+                  
+                   <h4><a href="#">CARE PLAN</a></h4>
+                    <p style="background-color:#FF6F61;font-size:10px;text-align:center;color:white;font-weight:bold">SAVE MORE</p>
+               
+           </div>
+           
+        </div>
+       
+        <div class="flex">
+         <a  style="text-decoration:none;color:black;margin:10px" href="Login.html">Login</a>
+            <hr style="height:35px;">
+           <a style="text-decoration:none;color:black;margin:10px" href="SignUp.html">Sign Up</a>
+            <p>Offers</p>
+           <a href="Cart.html"><img style="height:30px;width:30px"src="https://www.freeiconspng.com/thumbs/cart-icon/cart-icon-14.png"></img></a> 
+            <p>Need help?</p>
+        </div>
+        
+
+    </div>
+    <hr style="border:1px solid #F1F4F6;margin-top:-10px">
+
+
+    <div id ="Head1", class="flex">
+        <div>
+            <input style="width:300px;padding:10px 5px 10px 5px;background:#F1F4F6;border:0px; border-radius:5px", type="text" placeholder="Enter Location">
+           <input style="width:700px;padding:10px 5px 10px 5px;background:#F1F4F6;border:0px; border-radius:5px" type="search" placeholder="Search Medicined and Health Products">
+ 
+        </div>
+        <div class="flex">
+            <img style="width:15px;height:20px;margin-top:23px;margin-right:-5px"src="http://cdn.onlinewebfonts.com/svg/img_292324.png" >
+            <p>QUICK BUY! Flat 25% off on medicines* </p>
+            <button style="width:150px;height:40px;margin-right:-100px">Upload</button>
+        </div>
+        
+    </div>
+    <hr style="border:1px solid #F1F4F6;margin-top:-10px">
+
+     <!-- /* Head2 listing starts here */ -->
+    <nav>
+        <div class="wrapper">
+            <ul class="nav-links">
+                <li>
+                    <a href="#">All Medicines</a>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">Medicines by Therapeutic Class</a>
+                                    </header>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </li>
+                <li>
+                    <a href="#">Covid Essentials</a>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">Covid-19 S.T kits</a>
+                                    </header>
+                                <header>
+                                    <a  style="font-weight:bold" href="#"> Oxygen Cans & Conc</a> 
+                                </header>
+                              
+                                <header>
+                                    <a  style="font-weight:bold" href="#">Masks</a>
+                                </header>
+                                <header>
+                                    <a  style="font-weight:bold" href="#">Sanitizers & Handwash </a>
+                                </header>
+                                <header>
+                                    <a  style="font-weight:bold" href="#">Boost Your Immunity</a>
+                                </header>
+                                <header>
+                                    <a  style="font-weight:bold" href="#">Chyawanprash</a>
+                                </header>
+                               
+                                <header>
+                                    <a  style="font-weight:bold" href="#">Thermometer</a>
+                                </header>
+                               
+                               
+                              
+                            </div>
+                    
+                </li>
+                <li>
+                    <a href="#">Featured</a>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">winter care</a>
+                                    </header>
+                                    <ul class="mega-links">
+                                        <li><a href="#">Hair & Scalp Care</a></li>
+                                        <li><a href="#">Cough & Cold</a></li>
+                                        <li><a href="#">Fever & Headache</a></li>
+                                        <li><a href="#">Vaporizers & Nebulizers</a></li>
+                                        <li><a href="#">Heating Aid</a></li>
+                                        <li><a href="#">Winter Combos</a></li>
+                                       
+                                    </ul>
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">Tata 1mg Health Products</a> 
+                                    </header>
+                                     <header>
+                                        <a  style="font-weight:bold" href="#"> Trending Products</a> 
+                                    </header>
+                                    <header>
+                                        <a  style="font-weight:bold" href="#"> Explore Something New</a> 
+                                    </header>
+                                  </div>
+
+                            
+                            <div class="row">
+
+                                <header>
+                                    <a  style="font-weight:bold" href="#"> Buy More, Save More</a>
+                                </header>
+                                
+                                <header>
+                                    <a  style="font-weight:bold" href="#">Vaccination</a>
+                                </header>
+                                <header>
+                                    <a  style="font-weight:bold" href="#"> Minimum 33% Off</a>
+                                </header>
+                                
+                                <header>
+                                    <a  style="font-weight:bold" href="#">Combos</a>
+                                </header>
+                                <header>
+                                    <a  style="font-weight:bold" href="#"> Deals of the Day</a>
+                                </header>
+                                
+                                <header>
+                                    <a  style="font-weight:bold" href="#">Top Brands</a>
+                                </header>
+                                <ul class="mega-links">
+                                
+                                 <li><a href="#"> Accu-Chek</a></li>
+                                        
+                                    <li><a href="#">Ensure</a></li>
+                                    <li><a href="#">Revital</a></li>
+                                    <li><a href="#">Optimum Nutrition (ON) </a></li>
+                                    <li><a href="#">Dr. Morepen</a></li>
+                                    <li><a href="#">Pediasure</a></li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    </li>
+                
+                <li>
+                    <a href="#">Vitamins & Nutrition</a>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">Vitamins & Supplements</a>
+                                    </header>
+                                    <ul class="mega-links">
+                                        <li><a href="#">Multivitamins</a></li>
+                                        <li><a href="#">Vitamins A-Z</a></li>
+                                        <li><a href="#">Mineral Supplements</a></li>
+                                    
+                                    </ul>
+                                
+                                <header>
+                                    <a  style="font-weight:bold" href="#"> Nutritional Drinks</a> 
+                                </header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Adult Daily Nutrition</a></li>
+                                    <li><a href="#">Kids Nutrition (2-15 Yrs)</a></li>
+                                    <li><a href="#">For Women</a></li>
+                                
+                                </ul>
+                                <header>
+                                    <a  style="font-weight:bold" href="#">Health Food & Drinks</a>
+                                </header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Green Tea & Herbal Tea</a></li>
+                                    <li><a href="#">Herbal Juice</a></li>
+                                    <li><a href="#">Apple Cider Vinegar</a></li>
+                                    <li><a href="#">Healthy Snacks</a></li>
+                                
+                                </ul>
+                            </div>
+
+                            
+                            <div class="row">
+                                <header>
+                                    <a  style="font-weight:bold" href="#"> Protein Supplements</a>
+                                </header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Whey Protein</a></li>
+                                    <li><a href="#">Amino Acids</a></li>
+                                    <li><a href="#">Mass Gainers</a></li>
+                                    <li><a href="#">Workout Essential</a></li>
+                                    <li><a href="#">Fat Burners</a></li>
+                                </ul>
+                                <header>
+                                    <a  style="font-weight:bold" href="#">  Omega & Fish Oil</a>
+                                </header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Fish Oil</a></li>
+                                    <li><a href="#">Cod Liver Oil</a></li>
+                                    <li><a href="#">Flax Seed Oil</a></li>
+                                 
+                                </ul>
+                                <header>
+                                    <a  style="font-weight:bold" href="#">   Immunity Boosters</a>
+                                </header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Chyawanprashal</a></li>
+                                    <li><a href="#">Vitamin C</a></li>
+                                    <li><a href="#">Herble teas</a></li>
+                                    <li><a href="#">Antioxidant Supplements</a></li>
+                                    <li><a href="#">Ayurvedic Supplements</a></li>
+                                 
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>
+                                    <a  style="font-weight:bold" href="#"> Specialty Supplements</a>
+                                </header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Green Supplements</a></li>
+                                    <li><a href="#">Beauty Supplements</a></li>
+                                    <li><a href="#">Pre and Probiotics</a></li>
+                                    <li><a href="#">Glucosamine</a></li>
+                                    <li><a href="#">Collagen</a></li>
+                                    <li><a href="#"> Antioxidants</a></li>
+                                    <li><a href="#">Biotin</a></li>
+                                   
+                                  
+                                </ul>
+                                <header>
+                                    <a  style="font-weight:bold" href="#"> Weight Management</a>
+                                </header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Weight Management Herbs</a></li>
+                                    <li><a href="#">Meal Replacements</a></li>
+                                    <li><a href="#">Weight Gain</a></li>
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    </li>
+                    <li>
+                        <a href="#">Diabetes</a>
+                        <div class="mega-box">
+                            <div class="content">
+                                <div class="row">
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">Devices</a>
+                                        </header>
+                                        <ul class="mega-links">
+                                            <li><a href="#">Blood Glucose Monitors</a></li>
+                                            <li><a href="#">Test Strips & Lancets</a></li>
+                                            <li><a href="#">Syringes & Pens</a></li>
+                                        
+                                        </ul>
+                                    
+                                    <header>
+                                        <a  style="font-weight:bold" href="#"> Diabetic Medicines</a> 
+                                    </header>
+                                    <ul class="mega-links">
+                                        <li><a href="#">Vitamins, Minerals & Antioxidants</a></li>
+                                        <li><a href="#">Homeopathy Medicines</a></li>
+                                        <li><a href="#">Ayurvedic Medicines</a></li>
+                                    
+                                    </ul>
+                                   
+                                </div>
+    
+                                
+                                <div class="row">
+                                    <header>
+                                        <a  style="font-weight:bold" href="#"> Sugar Substitutes</a>
+                                    </header>
+                                    
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">Diabetic Diet</a>
+                                    </header>
+                                    <ul class="mega-links">
+                                        <li><a href="#">Juices & Vinegars</a></li>
+                                        <li><a href="#">Superfoods</a></li>
+                                       
+                                     
+                                    </ul>
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">  Diabetic Foot Health</a>
+                                    </header>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        </li>
+
+                        <li>
+                            <a href="#">Healthcare Devices</a>
+                            <div class="mega-box">
+                                <div class="content">
+                                    <div class="row">
+                                            <header>
+                                                <a  style="font-weight:bold" href="#">Masks (N95 and more)</a>
+                                            </header>
+                                            <ul class="mega-links">
+                                                <li><a style="text-decoration: none" href="FaceSheild.html">Face Shield</a></li>
+                                                <li><a href="#">Surgical Masks</a></li>
+                                                <li><a href="#">N95 Masks</a></li>
+                                            
+                                            </ul>
+                                        
+                                        <header>
+                                            <a  style="font-weight:bold" href="#"> Oxygen Concentrators & Cans</a> 
+                                        </header>
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">BP Monitors</a> 
+                                        </header>
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">Nebulizers & Vaporizers</a> 
+                                        </header>
+                                        <header>
+                                            <a  style="font-weight:bold" href="#"> Oximeters & Pedometers</a> 
+                                        </header>
+                                        <header>
+                                            <a  style="font-weight:bold" href="#"> Vital Signs Monitors</a> 
+                                        </header>
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">  Weighing Scales</a> 
+                                        </header>
+                                    </div>
+        
+
+                                    <div class="row">
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">Thermometers</a>
+                                        </header>
+                                        <ul class="mega-links">
+                                            <li><a href="#">IR Thermometers</a></li>
+                                           
+                                        </ul>
+
+
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">   Body Massager</a>
+                                        </header>
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">Diabetes Monitors</a>
+                                        </header>
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">Mobility Equipments</a>
+                                        </header>
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">Exercise Equipments</a>
+                                        </header>
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">Doctor's Corner</a>
+                                        </header>
+
+
+                                        <ul class="mega-links">
+                                            <li><a href="#"> Stethoscopes</a></li>
+                                            <li><a href="#">Tapes & Bandages</a></li>
+                                            <li><a href="#">Clinical Diagnostic Equipments</a></li>
+                                            <li><a href="#">Dressings & Wound Care</a></li>
+                                         
+                                        </ul>
+                                       
+                                    </div>
+                                    <div class="row">
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">Supports & Braces</a>
+                                        </header>
+                                        <ul class="mega-links">
+                                            <li><a href="#">Neck & Shoulder Support</a></li>
+                                            <li><a href="#">Knee & Leg Support</a></li>
+                                            <li><a href="#">Back & Abdomen Support</a></li>
+                                            <li><a href="#">Ankle & Foot Support</a></li>
+                                            <li><a href="#">Hand & Wrist Braces</a></li>
+                                            <li><a href="#"> Arm & Elbow Support</a></li>
+                                            <li><a href="#"> Cervical Pillows</a></li>
+                                            <li><a href="#"> Compression support & sleeves</a></li>
+                                            <li><a href="#">Heel support</a></li>
+                                           
+                                      
+                                        </ul>
+                                        
+        
+                                    </div>
+                                </div>
+                            </div>
+                   </li>
+                <li>
+                    <a href="#">Personal Care</a>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">Vitamins & Supplements</a>
+                                    </header>
+                                    <ul class="mega-links">
+                                        <li><a href="#">Multivitamins</a></li>
+                                        <li><a href="#">Vitamins A-Z</a></li>
+                                        <li><a href="#">Mineral Supplements</a></li>
+                                    
+                                    </ul>
+                                
+                                <header>
+                                    <a  style="font-weight:bold" href="#"> Nutritional Drinks</a> 
+                                </header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Adult Daily Nutrition</a></li>
+                                    <li><a href="#">Kids Nutrition (2-15 Yrs)</a></li>
+                                    <li><a href="#">For Women</a></li>
+                                
+                                </ul>
+                                <header>
+                                    <a  style="font-weight:bold" href="#">Health Food & Drinks</a>
+                                </header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Green Tea & Herbal Tea</a></li>
+                                    <li><a href="#">Herbal Juice</a></li>
+                                    <li><a href="#">Apple Cider Vinegar</a></li>
+                                    <li><a href="#">Healthy Snacks</a></li>
+                                
+                                </ul>
+                            </div>
+
+                            
+                            <div class="row">
+                                <header>
+                                    <a  style="font-weight:bold" href="#"> Protein Supplements</a>
+                                </header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Whey Protein</a></li>
+                                    <li><a href="#">Amino Acids</a></li>
+                                    <li><a href="#">Mass Gainers</a></li>
+                                    <li><a href="#">Workout Essential</a></li>
+                                    <li><a href="#">Fat Burners</a></li>
+                                </ul>
+                                <header>
+                                    <a  style="font-weight:bold" href="#">  Omega & Fish Oil</a>
+                                </header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Fish Oil</a></li>
+                                    <li><a href="#">Cod Liver Oil</a></li>
+                                    <li><a href="#">Flax Seed Oil</a></li>
+                                 
+                                </ul>
+                                <header>
+                                    <a  style="font-weight:bold" href="#">   Immunity Boosters</a>
+                                </header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Chyawanprashal</a></li>
+                                    <li><a href="#">Vitamin C</a></li>
+                                    <li><a href="#">Herble teas</a></li>
+                                    <li><a href="#">Antioxidant Supplements</a></li>
+                                    <li><a href="#">Ayurvedic Supplements</a></li>
+                                 
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>
+                                    <a  style="font-weight:bold" href="#"> Specialty Supplements</a>
+                                </header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Green Supplements</a></li>
+                                    <li><a href="#">Beauty Supplements</a></li>
+                                    <li><a href="#">Pre and Probiotics</a></li>
+                                    <li><a href="#">Glucosamine</a></li>
+                                    <li><a href="#">Collagen</a></li>
+                                    <li><a href="#"> Antioxidants</a></li>
+                                    <li><a href="#">Biotin</a></li>
+                                   
+                                  
+                                </ul>
+                                <header>
+                                    <a  style="font-weight:bold" href="#"> Weight Management</a>
+                                </header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Weight Management Herbs</a></li>
+                                    <li><a href="#">Meal Replacements</a></li>
+                                    <li><a href="#">Weight Gain</a></li>
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    </li>
+            
+                    <li>
+                        <a href="#">Health Conditions</a>
+                        <div class="mega-box">
+                            <div class="content">
+                                <div class="row">
+                                        <header>
+                                            <a  style="font-weight:bold" href="#">Stomach Care</a>
+                                        </header>
+                                    <header>
+                                        <a  style="font-weight:bold" href="#"> Heart Care</a> 
+                                    </header>
+                                  
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">Bone, joint and muscle care</a>
+                                    </header>
+                                    <header>
+                                        <a  style="font-weight:bold" href="#"> Pain Relief</a>
+                                    </header>
+                                    <ul class="mega-links">
+                                        <li><a href="#">Heating Aids</a></li>
+                                        
+                                    </ul>
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">Eye Care</a>
+                                    </header>
+                                    <ul class="mega-links">
+                                        <li><a href="#">Eye Lubricators</a></li>
+                                        
+                                    </ul>
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">Ear Care</a>
+                                    </header>
+                                    <ul class="mega-links">
+                                        <li><a href="#">Hearing Aid Devices</a></li>
+                                    </ul>
+                                  
+                                </div>
+    
+                                <div class="row">
+                                    <header>
+                                        <a  style="font-weight:bold" href="#"> First Aid</a>
+                                    </header>
+                                    
+                                    <header>
+                                        <a  style="font-weight:bold" href="#"> Liver Care</a>
+                                    </header>
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">Cold & cough</a>
+                                    </header>
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">Fever</a>
+                                    </header>
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">Mental Wellness</a>
+                                    </header>
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">Kindey Care</a>
+                                    </header>
+                                    <header>
+                                        <a  style="font-weight:bold" href="#"> Respiratory Care</a>
+                                    </header>
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">Piles, Fissures & Fistula</a>
+                                    </header>
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">Smoking Cessation</a>
+                                    </header>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        </li>
+
+                        <li>
+                            <a href="#">Ayurveda Products</a>
+                            <div class="mega-box">
+                                <div class="content">
+                                    <div class="row">
+                                            <header>
+                                                <a  style="font-weight:bold" href="#">Ayurveda Top Brands</a>
+                                            </header>
+                                            <ul class="mega-links">
+                                                <li><a href="#"> Dabur</a></li>
+                                                <li><a href="#">Sri Sri Tattva</a></li>
+                                                <li><a href="#"> Baidyanath Products</a></li>
+                                                <li><a href="#">Kerala Ayurveda</a></li>
+                                                <li><a href="#">Jiva Ayurveda</a></li>
+                                                <li><a href="#">Tata 1mg Herbal Supplements</a></li>
+                                                <li><a href="#">Patanjali</a></li>
+                                            </ul>
+                                           
+
+
+
+
+
+
+                                        <header>
+                                            <a  style="font-weight:bold" href="#"> Herbs</a> 
+                                        </header>
+                                        
+                                        <ul class="mega-links">
+                                            <li><a href="#"> Turmeric</a></li>
+                                            <li><a href="#">Ashwagandha (Immunity & Stress)</a></li>
+                                            <li><a href="#">Garcinia Cambogia (Weight Loss)</a></li>
+                                            <li><a href="#">Arjuna (Cardiac Wellness)</a></li>
+                                            <li><a href="#">Shilajit (Men Sexual Wellness)</a></li>
+                                            <li><a href="#">Ginseng (Improves Cognition)</a></li>
+                                            <li><a href="#">Milk Thistle (Liver Care)</a></li>
+                                            <li><a href="#">Musli (Vitality & Sexual Wellness)</a></li>
+                                            <li><a href="#">Saw Palmetto (Prostate Health)</a></li>
+                                        </ul>
+                                      
+                                     
+
+                                    
+                                </div>
+                                <div class="row">
+                                    <header>
+                                        <a  style="font-weight:bold" href="#"> Popular Category</a>
+                                    </header>
+                                    <ul class="mega-links">
+                                        <li><a href="#"> Cough, Cold & Fever</a></li>
+                                        <li><a href="#">Ayurvedic Immunity Boosters</a></li>
+                                        <li><a href="#"> Ayurvedic Respiratory care</a></li>
+                                        <li><a href="#"> Sexual Wellness</a></li>
+                                        <li><a href="#">Stomach Care</a></li>
+                                        <li><a href="#">Diabetes Care</a></li>
+                                        <li><a href="#"> Bone, Joint and Muscle Care</a></li>
+                                        <li><a href="#"> Liver Care</a></li>
+                                        <li><a href="#"> Mind Care</a></li>
+                                        <li><a href="#">Diabetes Care</a></li>
+                                        <li><a href="#"> Cardiac Care</a></li>
+                                        <li><a href="#">  Ayurveda Personal Care</a></li>
+                                        
+                                    </ul>
+                                   
+                                    
+                                    
+                                   
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">  Unani Medicines</a>
+                                    </header>
+                                    <ul class="mega-links">
+                                        <li><a href="#">Hamdard Unani</a></li>
+                                        <li><a href="#">AMU Dawakhana</a></li>
+                                        <li><a href="#">  Rex Remedies</a></li>
+                                       
+                                    </ul>
+                                   
+                                </div>
+
+                            </div>
+                  </li>
+                  <li>
+                    <a href="#">Homeopathy </a>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                    <header>
+                                        <a  style="font-weight:bold" href="#">Homeopathy Top Brands</a>
+                                    </header>
+                                    <ul class="mega-links">
+                                        <li><a href="#">SBL Homoeopathy</a></li>
+                                        <li><a href="#"> Dr Reckeweg</a></li>
+                                         
+                                        <li><a href="#">Dr Willmar Schwabe India</a></li>
+                                        <li><a href="#"> Adel Pekana</a></li>
+                                        <li><a href="#"> BJAIN Homeopathy</a></li>
+                                        <li><a href="#">Bakson's</a></li>
+                                        <li><a href="#"> Allen</a></li>
+                                        <li><a href="#">  Wheezal</a></li>
+                                        <li><a href="#"> Dr Willmar Schwabe Germany</a></li>
+                                        <li><a href="#">  Haslab</a></li>
+                                        <li><a href="#">  Medisynth</a></li>
+                                        <li><a href="#">Boiron</a></li>
+                                        <li><a href="#">   Bhandari</a></li>
+                                        <li><a href="#"> Dr Bakshi Bakson</a></li>
+                                        <li><a href="#">  Dr Batra's</a></li>
+                                        
+                                    </ul>
+                                    <header>
+                                        <a  style="font-weight:bold" href="#"> Homeopathy Wellness Combos</a>
+                                    </header>
+                        </div>
+                        <div class="row">
+                            <header>
+                                <a  style="font-weight:bold" href="#">Homeopathy Popular Categories</a>
+                            </header>
+                            <ul class="mega-links">
+                                <li><a href="#">  Homeopathic Care for Cold & Cough</a></li>
+                                <li><a href="#"> Respiratory Wellness</a></li>
+                                <li><a href="#">  Homeopathy Covid Essentials</a></li>
+                                <li><a href="#"> Sexual Health</a></li>
+                                <li><a href="#"> Hair Care Products</a></li>
+                                <li><a href="#"> Skin Care Products</a></li>
+                                <li><a href="#"> Children's Health</a></li>
+                                <li><a href="#"> Women's Health</a></li>
+                               
+                                
+                                
+                            </ul>
+                            <header>
+                                <a  style="font-weight:bold" href="#"> Homeopathy Medicines</a>
+                            </header>
+                            <ul class="mega-links">
+                                <li><a href="#"> Homeopathic Drops</a></li>
+                                <li><a href="#">  Dilutions</a></li>
+                                <li><a href="#"> Mother Tinctures</a></li>
+                                <li><a href="#"> Triturations</a></li>
+                                <li><a href="#">Bio Combinations</a></li>
+                                <li><a href="#">  Millesimal LM Potencies</a></li>
+                                <li><a href="#">Biochemics</a></li>
+                                <li><a href="#"> Bach Flower Remedies</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+    <div class="headimage">
+        <div class=" headslide">
+            <div class="slider">
+                <div class="picdiv"style="margin:70px">
+                    <input id="radio1"type="radio">
+                    <input id="radio2"type="radio">
+                    <input id="radio3" type="radio">
+                    <input id="radio4" type="radio">
+                    <input id="radio5" type="radio">
+                    <input id="radio6"type="radio">
+                    <input id="radio7" type="radio">
+                    <input id="radio8" type="radio">
+                    <input id="radio9" type="radio">
+        
+        
+                    <div class="slide first">
+                        <img style="width:1320px;height:300px;margin-top:-60px; margin-left:-180px;"src="https://cdn.discordapp.com/attachments/915262435601039420/932930144232935424/NEW_2.jpg" alt="">
+                        
+                    </div>
+                    <div class="slide"> 
+                        <img style="width:1320px;height:260px;margin-top:-70px" src="https://cdn.discordapp.com/attachments/915262435601039420/932930144438464542/NEW_4.jpg" alt="">
+                        
+                    </div>
+                    <div class="slide">
+                        <img style="width:1320px;height:300px;margin-top:-90px" src="https://cdn.discordapp.com/attachments/915262435601039420/932930144639799306/NEW_5.jpg" alt="">
+                       
+                    </div>
+                    <div class="slide">
+                        <img style="width:1320px;height:300px;margin-top:-90px" src="https://cdn.discordapp.com/attachments/915262435601039420/932930144820166676/NEW_6.jpg" alt="">
+                        
+                    </div>
+                    <div class="slide">
+                        <img style="width:1320px;height:300px;margin-top:-90px" src="https://cdn.discordapp.com/attachments/915262435601039420/932930145621245992/NEW_10.jpg" alt="">
+                        
+                      
+                    </div>
+                    <div class="slide">
+                        <img style="width:1320px;height:300px;margin-top:-90px" src="https://cdn.discordapp.com/attachments/915262435601039420/932930145822589008/NEW3.jpg" alt="">
+                        
+                      
+                    </div>
+                    <div class="slide">
+                        <img style="width:1320px;height:300px;margin-top:-90px" src="https://cdn.discordapp.com/attachments/915262435601039420/932930146019713024/NEW8.jpg" alt="">
+                        
+                      
+                    </div>
+                    <div class="slide">
+                        <img style="width:1320px;height:300px;margin-top:-90px" src="https://cdn.discordapp.com/attachments/915262435601039420/932930146229444708/Untitled-1.jpg" alt="">
+                        
+                      
+                    </div>
+                    <div class="slide">
+                        <img style="width:1320px;height:300px;margin-top:-90px" src="https://cdn.discordapp.com/attachments/915262435601039420/932930145315065906/NEW_9.jpg" alt="">
+                        
+                      
+                    </div>
+                   
+                     <!-- automatic navigation start -->
+                    <div classs="navigation-auto">
+                        <div class="auto-butn1"> </div>
+                        <div class="auto-butn2"> </div>
+                        <div class="auto-butn3"> </div>
+                        <div class="auto-butn4"> </div>
+                        <div class="auto-butn5"> </div>
+                        <div class="auto-butn6"> </div>
+                        <div class="auto-butn7"> </div>
+                        <div class="auto-butn8"> </div>
+                        <div class="auto-butn9"> </div>
+                       
+                    </div>
+                    
+                     <!-- automatic navigation end-->
+                </div>
+                
+        
+               <!-- manual navigation start-->
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+                <label for="radio5" class="manual-btn"></label>
+                <label for="radio6" class="manual-btn"></label>
+                <label for="radio7" class="manual-btn"></label>
+                <label for="radio8" class="manual-btn"></label>
+                <label for="radio9" class="manual-btn"></label>
+                
+            </div>
+                <!-- manual navigation end-->
+            </div>
+          
+    
+    
+        </div>
+
+        <script type="text/javascript">
+            var counter=1;
+            setInterval(function(){
+                document.getElementById('radio'+counter).checked = true;
+        counter++;
+        if(counter>9){
+            counter=1;
+            }   
+         },4000);
+        </script>
+
+        <div"> <img style="width:690px;height:250px" src="https://onemg.gumlet.io/image/upload/w_480,h_200,,a_ignore,q_auto,f_auto/v1642529870/qtgkjsl53vjw14nugil7.png "></img></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <p class="boxshadow" style="font-size:25px;color:grey;text-align: center;background: white;padding-top:30px;padding-bottom:30px;margin-top:-15px;">Tata 1mg: India’s Leading Online Pharmacy & Healthcare Platform</p>
+
+    <img style="width:1200px;margin-left:350px" src="https://onemg.gumlet.io/image/upload/v1638879520/ccdg5rr0hssuyw6nw27m.png"></img>
+
+
+    <div class="ListDivsizesmall boxshadow">
+        <div class="carousel" data-flickity='{ "groupCells": true }'>
+            <div class="carousel-cell"><img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_ignore,q_auto,f_auto/v1642741472/zvex5accxpfxw8svynsg.jpg" alt=""></div>
+            <div class="carousel-cell"><img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_ignore,q_auto,f_auto/v1642741682/pjhtpzwhibwzlcqjj0pz.jpg" alt=""></div>
+            <div class="carousel-cell"><img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_ignore,q_auto,f_auto/v1642654489/p1i7rlkkuzlbve8c9ryq.jpg" alt=""></div>
+            <div class="carousel-cell"><img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_ignore,q_auto,f_auto/v1642741744/gqpmvdyglxjvqjrsrwst.jpg" alt=""></div>
+            <div class="carousel-cell"><img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_ignore,q_auto,f_auto/v1642741877/utmvgembgd9wfypeukab.jpg" alt=""></div>
+            <div class="carousel-cell"><img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_ignore,q_auto,f_auto/v1642741930/mjdqtz3buoxt08jcfrnz.jpg" alt=""></div>
+            <div class="carousel-cell"><img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_ignore,q_auto,f_auto/v1642654530/pecufwpdagoiczkxpdp1.jpg" alt=""></div>
+            <div class="carousel-cell"><img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_ignore,q_auto,f_auto/v1642741979/tufpnaqlpzacz3ujilmw.jpg" alt=""></div>
+            <div class="carousel-cell"><img src="https://onemg.gumlet.io/image/upload/w_150,h_150,c_fit,a_ignore,q_auto,f_auto/v1642741996/sgyrnglpwoimxa3zaubc.jpg" alt=""></div>
+        
+          </div>
+          
+    </div>
+    <div class="ListDivsizesmall boxshadow"></div>
+    <div class="ListDivsizelarge boxshadow"></div>
+    <div class="ListDivsizelarge boxshadow"></div>
+    <div class="ListDivsizelarge boxshadow"></div>
+    <div class="ListDivsizesmall boxshadow"></div>
+    <div class="ListDivsizesmall boxshadow"></div>
+
+
+    <div id="footer">
+        <h3>Stay Healthy with Tata 1mg: Your Favourite Online Pharmacy and Healthcare Platform</h3>
+        <h4>We Bring Care to Health.</h4>
+        <p>Tata 1mg is India's leading digital healthcare platform. From doctor consultations on chat to online pharmacy and lab tests at home: we have it all covered for you. Having delivered over 25 million orders in 1000+ cities till date, we are on a mission to bring "care" to "health" to give you a flawless healthcare experience.</p>
+        
+        <h4>Tata 1mg: Your Favourite Online Pharmacy!</h4>
+
+        <p>Tata 1mg is India's leading online chemist with over 2 lakh medicines available at the best prices. We are your one-stop destination for other healthcare products as well, such as over the counter pharmaceuticals, healthcare devices and homeopathy and ayurveda medicines.</p>
+
+        <p>With Tata 1mg, you can buy medicines online and get them delivered at your doorstep anywhere in India! But, is ordering medicines online a difficult process? Not at all! Simply search for the products you want to buy, add to cart and checkout. Now all you need to do is sit back as we get your order delivered to you.</p>
+
+        <p>In case you need assistance, just give us a call and we will help you complete your order.</p>
+        <p>Don't want to go through the hassle of adding each medicine separately? You can simply upload your prescription and we will place your order for you. And there is more! At Tata 1mg, you can buy health products and medicines online at best discounts.</p>
+
+        <p>Now, isn't that easy? Why go all the way to the medicine store and wait in line, when you have Tata 1mg Pharmacy at your service.</p>
+        <h4>The Feathers in Our Cap</h4>
+   
+        <p>At Tata 1mg, our goal is to make healthcare understandable, accessible and affordable in India. We set out on our journey in 2015,
+             and have come a long way since then. Along the way, we have been conferred with prestigious titles like <b style="color:#666666">BML Munjal Award for 
+                'Business Excellence through Learning and Development', Best Online Pharmacy in India Award and Top 50 venture in The Smart CEO-Startup50 India.</b>  We have been selected as the only company from across the globe for<b style="color:#666666"> SD#3 "Health & Well Being for all" by Unreasonable group, US State Department.</b> In 2019 alone we received three awards including the <b style="color:#666666">BMW Simply Unstoppable Award</b>.</p>
+   
+   <h4>The Services We Offer</h4>
+   
+   <p>Tata 1mg is India's leading digital healthcare platform, 
+       where you can buy medicines online with discount. Buy medicine online in Delhi, 
+       Mumbai, Bangalore, Hyderabad, Pune, Gurgaon, Noida, Kolkata, Chennai, Ahmedabad, 
+       Lucknow and around a 1000 more cities. Besides delivering your online medicine order
+        at your doorstep, we provide accurate, authoritative & trustworthy information on medicines
+        and help people use their medicines effectively and safely.</p>
+   
+   
+   <p>We also facilitate lab tests at home. You can avail over 2,000 tests and get tested by 120+ top and verified labs at the best prices. Need to consult a doctor? On our platform,
+        you can talk to over 20 kinds of specialists in just a few clicks.</p>
+
+
+
+    <p>Customer centricity is the core of our values. Our team of highly trained and experienced doctors, phlebotomists and pharmacists looks into each order to give you a fulfilling experience.</p>
+
+    <p>We’ve made healthcare accessible to millions by giving them quality care at affordable prices. Customer centricity is the core of our values. Our team of highly trained and experienced doctors,
+         phlebotomists and pharmacists looks into each order to give you a fulfilling experience.</p>
+
+
+        <p>Visit our online medical store now, and avail online medicine purchase at a discount.</p>
+<p>Stay Healthy!</p>
+
+<hr style="border:1px solid #F1F4F6;margin-top:-10px">
+
+<p style="text-align:center; font-size:20px;color:black">INDIA’S LARGEST HEALTHCARE PLATFORM</p>
+
+<div style="display: flex;margin-left:450px; width:1100px; justify-content: space-between;">
+    <div>
+        <h1>160m+</h1>
+        <p style="margin-left:4px">Visitors</p></div>
+    <div><h1>27m+</h1>
+        <p style="margin-left:-10px;width:200px">Orders Delvered</p></div>
+        <div><h1>1800+</h1>
+            <p style="margin-left:8px;width:200px">Cities</p></div>
+</div>
+
+<hr style="border:1px solid #F1F4F6;margin-top:-10px;width:1600px">
+
+
+<div style="display: flex; width:800px;margin-left:550px">
+    <p style="color:black;font-size:16px">Get the link to download App</p>
+    <input  style=" background-color:#F1F4F6;margin-right:30px;width:900px; border:0px; padding:5px 20px" type="number" placeholder="Enter Phone Number"></input>
+    <input class="LastHomeSubmit"type="submit" value="Get Link"></input>
+</div>
+
+
+    </div>
+<div class="lastdiv">
+    <div style="display:flex;justify-content:space-evenly;margin-top:50px">
+        <ul type="none">
+            <li style="padding:10px; ">Know Us</li>
+            <li style=" color:grey;font-size:12px; line-height: 20px;">Contact Us</li>
+            <li style=" color:grey;font-size:12px; line-height: 20px;">About Us</li>
+            <li style=" color:grey;font-size:12px; line-height: 20px;">Press Covergare</li>
+            <li style=" color:grey;font-size:12px; line-height: 20px;">Carrers</li>
+            <li style=" color:grey;font-size:12px; line-height: 20px;">Business Partnership</li>
+            <li style=" color:grey;font-size:12px; line-height: 20px;">Become a Health Partner</li>
+        </ul>
+        <ul type="none">
+            <li style="padding:10px">Our Policies</li>
+            <li style=" color:grey;font-size:12px;line-height: 20px;">Privacy Policy</li>
+            <li style=" color:grey;font-size:12px;line-height: 20px;">Terms and Conditions</li>
+            <li style=" color:grey;font-size:12px;line-height: 20px;">Editorial Policy</li>
+            <li style=" color:grey;font-size:12px;line-height: 20px;">Return Policy</li>
+            <li style=" color:grey;font-size:12px;line-height: 20px;">IP Policy</li>
+            <li style=" color:grey;font-size:12px;line-height: 20px;">Grievance Redressal Policy</li>
+        </ul>
+        <ul type="none">
+            <li style="padding:10px">Our Services</li>
+            <li style=" color:grey;font-size:12px;line-height: 20px;">Order Medicines</li>
+            <li style=" color:grey;font-size:12px;line-height: 20px;">Book Lab Tests</li>
+            <li style=" color:grey;font-size:12px;line-height: 20px;">Consult a Doctor</li>
+            <li style=" color:grey;font-size:12px;line-height: 20px;">Ayurveda Articles</li>
+            <li style=" color:grey;font-size:12px;line-height: 20px;">Hindi Articles</li>
+            <li style=" color:grey;font-size:12px;line-height: 20px;">Care Plan</li>
+        </ul>
+        <div style="line-height:10px; margin-left:50px"> 
+            <p>Connect</p>
+            <p  style="color:grey;font-size:12px;line-height: 20px;">Social Links</p>
+            <img style="width:150px;margin-top:-20px;margin-bottom:-20px" src="https://cdn.pixabay.com/photo/2021/02/08/15/44/social-media-5995266_1280.png"></img>
+            <p  style=" color:grey;font-size:12px;line-height: 20px">Want daily dose of health?</p>
+            <input style=" padding:10px 20px;background:#FF6F61;color:white;border:0px;border-radius:2px"type="submit" value="SIGN UP"></input>
+        </div>
+        <div style="line-height:10px; margin-left:50px">
+            <h4>Download App</h4>
+            <img style="width:150px;margin-top:-20px;margin-bottom:-20px" src="http://assets.stickpng.com/images/5a902dbf7f96951c82922875.png"></img>;
+            
+           
+        </div>
+    </div>
+    <hr style="border:1px solid #F1F4F6;margin-top:20px;width:1600px">
+    <div style="display:flex;justify-content: space-evenly;">
+        <div  style="display:flex">
+            <img  style="width:90px;height:90px;margin:20px" src="https://images.vexels.com/media/users/3/153881/isolated/preview/16ab32ffb86d15bbfb5dc2ce361c16fe-shield-colored-stroke-icon.png">
+            <div>
+                <h2> Reliable</h2>
+            <p style="width:300px;color:grey;font-size:16px;line-height:20px;">All products displayed on Tata 1mg are procured from verified and licensed pharmacies.
+                 All labs listed on the platform are accredited</p>
+            </div> 
+        </div>
+        <div  style="display:flex">
+            <img style="width:90px;height:90px;margin:20px"src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/79025/lock-icon-clipart-lg.png">
+            <div>
+                <h2>Secure</h2>
+                 <p style="width:300px;color:grey;font-size:16px;line-height:20px;">Tata 1mg uses Secure Sockets Layer (SSL) 128-bit encryption and is Payment Card Industry Data Security Standard (PCI DSS) compliant</p>
+            </div>
+        </div>
+        <div  style="display:flex">
+            <img  style="width:90px;height:90px;margin:20px" src="https://icons.veryicon.com/png/o/internet--web/imitating-gradient-lovely-social-red/wallet-42.png">
+            <div>
+                <h2>Affordable</h2>
+             <p style="width:300px;color:grey;font-size:16px;line-height:20px;">Find affordable medicine substitutes, save up to 50% on health products, up to 80% off on lab tests and free doctor consultations.</p>
+            </div>
+        </div>
+    </div>
+   
+    <hr style="border:1px solid #F1F4F6;margin-top:20px;width:1600px">
+
+
+<div style="display:flex;margin-left:800px">
+    <img style="margin-right:20px;width:100px;height:80px"src="https://static.legitscript.com/seals/729605.png">
+    <img style="margin-right:20px;width:100px;height:80px" src="https://res.cloudinary.com/du8msdgbj/image/upload/v1580717209/URS_ebgmxc.png">
+</div>
+
+
+<h3 style="text-align: center;">India's only LegitScript and ISO/ IEC 27001 certified online healthcare platform</h3>
+
+
+<hr style="border:1px solid #F1F4F6;margin-top:20px;width:1600px">
+
+<h4 style="margin-left:20px">Know more about Tata 1mg</h4>
+
+<hr style="border:1px solid #F1F4F6;margin-top:20px;width:1600px">
+<h4 style="margin-left:20px;color:grey">© 2022 Tata 1mg. All rights reserved. In compliance with Drugs and Cosmetics Act, 1940 and Drugs and Cosmetics Rules, 1945, we don't process requests for Schedule X and other habit forming drugs.</h4>
+
+</div>
+
+
+
+
+</body>
+</html>

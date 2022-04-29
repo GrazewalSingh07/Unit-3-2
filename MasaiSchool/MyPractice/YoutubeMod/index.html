@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #LeftHeader{
+            background-color: #212121;
+            width:80px;
+            height:900px;
+        }
+        #LeftHeader>img{
+            margin: 12px;
+        }
+        #nav{
+            display:flex;
+            position: fixed;
+            top:0;
+            /* overflow: hidden; */
+        }
+        #RightHeader{
+            background-color: #202020;
+            height:100px;
+            width:1830px;
+             display: flex;
+
+        }
+        input{
+            background-color: black;
+            margin-left:300px;
+            margin-bottom:20px;
+            margin-top:25px;
+            width:700px;
+            padding:20px 25px;
+            color:white;
+            font-size: 20px;
+        }
+        #RightHeader>img{
+            width:120px;
+            height: 80px;
+            margin-left:20px;
+            margin-top: 15px;
+        }
+       button{
+            
+        padding:17px 20px;
+        font-size:20px
+        }
+        #media{
+            background-color: #181818;
+            display:grid;
+            width:100%;
+            margin-top:100px ;
+            margin-left: 80px;
+            height:auto;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+        }
+        #media>div{
+            margin-top:20px;
+            margin-left:50px
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="nav">
+        
+        <div id="LeftHeader">
+            <img style="width:50px" src="https://icon-library.com/images/menu-icon-png-3-lines/menu-icon-png-3-lines-5.jpg"/>
+            <img style="width:50px" src="https://freepikpsd.com/file/2019/10/house-icon-png-white-1-Transparent-Images-Free.png"/>
+            <img style="width:50px" src="https://icon-library.com/images/explore-icon-png/explore-icon-png-24.jpg"/>
+            <img style="width:50px" src="https://www.freeiconspng.com/uploads/video-icon-17.png"/>
+            <img style="width:50px" src="https://cdn.pixabay.com/photo/2018/03/19/02/52/the-youtube-logo-3238901_640.png"/>
+        </div>
+        <div id="RightHeader">
+            <img src=" https://spnbunker.files.wordpress.com/2020/05/youtube-logo-designer-youtube-logo-png-transparent-background-download-diy-logo-designs.png"/>
+            <div>
+                <input placeholder="Search" type="text" id="SearchBox"/>
+                 <button style="background-color:#313131; color:white; border:0" onclick="searchvideo()">Search</button></div>
+            </div>
+            
+        
+    </div>
+    <div id="media">
+
+    </div>
+    
+</body>
+</html>
+<script>
+    let Key="AIzaSyCrKztBajI9bBl6RFNuREeW7ec8lYypIT0"
+    //url==    https://youtube.googleapis.com/youtube/v3/search?key=[YOUR_API_KEY]
+   
+   async function searchvideo(){
+       try {
+        var searchname=document.getElementById("SearchBox").value
+ 
+    let res=await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&key=${Key}&q=${searchname}&type=video&maxResults=50`)
+    let data=await res.json();
+     let videoList=data.items;
+      console.log(videoList)
+     displayData(videoList);
+      }
+       
+        catch (error) {
+           console.log(error)
+       }
+   }
+
+
+   var mediaid=document.getElementById("media")
+   
+   const displayData=(videosArray)=>{
+    mediaid.innerHTML="";
+    //    create an iframe
+    videosArray.forEach(function movie(elem){  
+        var videocard=document.createElement("div");
+        var Iframe=document.createElement("iframe")
+        var videoId=elem.id.videoId
+        var title=elem.snippet.title
+       Iframe.src=`https://www.youtube.com/embed/${videoId}`
+       Iframe.title=title
+       videocard.append(Iframe,title);
+       mediaid.append(videocard);
+    })
+      
+   }
+    
+</script>

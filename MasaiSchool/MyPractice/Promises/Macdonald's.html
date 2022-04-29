@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu{
+            margin-left:100px;
+            display:grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows:auto;
+            gap:20px
+        }
+        #menu>div>p{
+            text-align: right;
+        }
+        #menu>div{
+            width:250px;
+            background-color:rgb(251, 251, 171);
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+        img{
+            margin:20px;
+            width:200px
+        }
+    </style>
+</head>
+<body>
+    <div id="menu"></div>
+    <button id ="but">Order Food</button>
+    
+</body>
+</html>
+<script>
+     async function Dishes(){
+        try {
+            let dishes= await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=Indian`)
+            var data=await dishes.json() 
+            var Mydishes=data.meals
+           
+           RenderDishes(Mydishes)
+        } 
+        catch (error) {
+            console.log(error)
+        }
+    }
+    Dishes()
+
+    var order=JSON.parse(localStorage.getItem("orders"))||[]
+    function RenderDishes(dishes){
+        dishes.forEach(function menu(elem){
+        var div=document.createElement("div")
+        var image=document.createElement("img")
+        image.src=elem.strMealThumb
+        var box=document.createElement("input")
+        box.setAttribute("type","checkbox")
+
+        box.addEventListener("change",Orders)
+            function Orders(){
+                  order.push(elem)
+                
+                localStorage.setItem("orders", JSON.stringify(order))
+            }
+           
+            var order=JSON.parse(localStorage.getItem("orders"))
+            document.getElementById("but").addEventListener("click", confirmation)
+            
+        //    (Confirm(),5000)
+           
+           function confirmation(){setTimeout(function Confirm(event){
+                // event.preventDefault()
+                
+                document.getElementById("menu").innerHTML="";
+                order.forEach(function(elem){
+                   
+                    var image=document.createElement("img")
+                     image.src=elem.strMealThumb
+                     var div=document.createElement("div")
+                     var p=document.createElement("p")
+                     p.textContent=Math.floor(Math.random()*120)+1
+                     div.append(p,image)
+                     document.getElementById("menu").append(div);
+                     document.getElementById("but").textContent="Add more"
+                     document.getElementById("but").addEventListener("click", Addmore)
+                     function Addmore(){
+                        document.getElementById("menu").innerHTML="";
+                        RenderDishes(dishes)
+                        
+                     }
+
+           })},5000)}
+        div.append(image,box)
+        document.getElementById("menu").append(div);
+        })
+        console.log(order)
+    }
+   
+</script>

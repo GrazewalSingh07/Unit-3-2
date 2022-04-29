@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        #Body>img{
+            width:1600px;
+            height:700px;
+            
+        }
+        #slideimage{
+            margin-left: 100px;
+            margin-top:10px;
+            margin-bottom: 10px;
+        }
+        #main{
+            width:1800px;
+            height:auto;
+            border:1px solid skyblue;
+            margin:50px;
+        }
+        #Head{
+            margin-top: 20px;
+            margin-left: 25px;
+            height:5%;
+            width: 96%;
+            border: 1px solid black
+        }
+        button{
+            border:none;
+            background-color: white;
+            padding:5px 10px;
+            margin:10px
+            
+        }
+        button:hover{
+            font-size: 10px;
+            text-shadow: 2px 2px 5px black;
+            
+        }
+        #Head>div{
+            margin-left:1400px;
+            margin-top: 5px;
+        }
+        #MovieData{
+            display:grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: auto;
+            gap:50px;
+            margin-left:20px
+        }
+        #MovieData>div>img{
+            height:300px;
+            width:400px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="Head">
+            <div>
+            <button onclick="Home()">Home</button>
+            <button onclick="Signup()">Signup</button>
+            <button onclick="Login()">Login</button>
+            </div>
+        </div>
+        <div id="sort-filter">
+            <select name="sort" id="sortButton" onchange="sortmovie()">
+              <option value="">SORT</option>
+              <option value="asc">Low to High</option>
+              <option value="desc">High to Low</option>
+            </select>
+             
+          </div>
+        
+        <div id="Body">
+            <img id="slideimage"></img>
+        </div>
+        <div id="MovieData">
+            
+        </div>
+    </div>
+</body>
+</html>
+<script>
+         function sortmovie() {
+        
+         var moviearr=JSON.parse(localStorage.getItem("Database"))||[]
+          
+          var sortCriteria = document.getElementById("sortButton").value;
+          if (sortCriteria) {
+            let updatedmovieList = moviearr.sort(function sortFunction(movieA, movieB) {
+                if (sortCriteria === "asc") {
+                  return movieA.rate - movieB.rate;
+                }
+                 else if (sortCriteria === "desc") {
+                  return movieB.rate - movieA.rate;
+                }
+              });
+              rendermovies(updatedmovieList);
+            }
+           else{  
+            rendermovies(moviearr)
+          }
+
+        }
+    function Signup(){
+        window.location.href="SignUp.html"
+    }
+    function Login(){
+        window.location.href="Login.html"
+    }
+    var BodyDiv=document.getElementById("MovieData")
+    var moviearr=JSON.parse(localStorage.getItem("Database"))||[]
+    moviearr.splice(0,5)
+    console.log(moviearr)
+    function rendermovies(moviearr){
+         moviearr.forEach(function(elem){
+        var div=document.createElement("div")
+        var image=document.createElement("img")
+        var h3=document.createElement("h3")
+        var p=document.createElement("p")
+        var rate=document.createElement("p")
+        image.src=elem.url
+        h3.textContent=elem.name
+        rate.textContent=elem.rating
+        p.textContent=elem.releasedate
+        div.append(image,h3,p,rate);
+        BodyDiv.append(div)
+        })
+    }
+    rendermovies(moviearr)
+    
+    
+
+
+    var i=0;
+    var imgarr=["https://i.ytimg.com/vi/KfaYkyTMOYA/maxresdefault.jpg","https://imageio.forbes.com/blogs-images/scottmendelson/files/2019/03/FIN02_JW3_1Sht_Payoff_VF1-1200x675.jpg?fit=bounds&format=jpg&width=960","https://pro2-bar-s3-cdn-cf3.myportfolio.com/0d77262d-68bc-4f69-ba3d-e739ca29a233/e4d65f35-c9b7-4ec9-b9ed-86e106c8b430_rw_1920.jpg?h=52c9ee058b699803910345678592d0ec", "https://wallpapercave.com/wp/wp1851117.jpg","https://www.slashfilm.com/wp/wp-content/images/it_ver3_xlg.jpg","https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/07/Insidious-Movies-in-Order.jpg", "https://trendingnewsbuzz.com/wp-content/uploads/2021/05/the-witch.jpg","https://stanforddaily.com/wp-content/uploads/2020/01/ford-v-ferrari.jpg","https://i1.wp.com/3.bp.blogspot.com/-cDcbexO5J9o/T6xPl8LlUaI/AAAAAAAAAFY/MMbRH_dBfXA/s1600/prometheus_banner.jpg","https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/7116/517116-h"]
+    let img=document.getElementById("slideimage")
+    let x=setInterval(function(){
+        if(i==10){
+            i=0;
+        }
+        img.src=imgarr[i];
+        i++
+    }, 3000)
+</script>
+
+<!-- var i=0;
+    var arr=["nutritional balance","wellness balance","health balance", "lifestyle balance"]
+    let h1=document.getElementById("Changingh1")
+    let x=setInterval(function(){
+        if(i==3){
+            i=0;
+        }
+        h1.textcontent=arr[i];
+        i++
+    }, 1000) -->

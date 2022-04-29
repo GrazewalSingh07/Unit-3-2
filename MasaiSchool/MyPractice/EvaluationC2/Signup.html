@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-ups</title>
+</head>
+<body>
+    <form>
+        <input id="name" type="text" placeholder="Name"/>
+        <input id="number" type="Number" placeholder="Number"/>
+        <button id="submit">Submit</button>
+    </form>
+</body>
+</html>
+<script>
+     var btn=document.querySelector("button")
+     let users=localStorage.getItem("users");
+             if(!users){
+                 users=[];
+                 localStorage.setItem("users",JSON.stringify(users))
+             }
+             else{
+                 users=JSON.parse(users)
+                
+             }
+        btn.onclick=function submit(event){
+         event.preventDefault();
+        //  console.log("Hi")
+         var name=document.getElementById("name").value
+         var number=document.getElementById("number").value
+         var usersobj={
+             name:name,
+             number:number,
+         }
+         users.push(usersobj)
+         localStorage.setItem("users",JSON.stringify(users))
+         window.location.href="signin.html"
+     }
+    
+    console.log(users)
+</script>

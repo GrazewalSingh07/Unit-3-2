@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+var grandParent={
+    height:"5.5 feet",
+    color:"Brown",
+    HairColor:"Black",
+    Eye_Color:"black"
+}
+
+var Parents=Object.create(grandParent);
+Parents.property=true;
+Parents.nationality="Australian";
+// console.log(Parents)
+var me=Object.create(Parents);
+me.height="5.1 feet";
+me.color="Brown";
+console.log(me)
+console.log(me.HairColor)
+
+</script>

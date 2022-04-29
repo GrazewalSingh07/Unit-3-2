@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+#jnavbar{
+    display: flex;
+    align-items: center;
+    height: 60px;
+    border-bottom: 1px solid rgb(193, 189, 189);
+}
+#jnavbar a {
+    width: 125px;
+    margin: auto 20px;
+}
+#jnavbar button {
+    height: 36px;
+    color: white;
+    background-color:rgb(0,86,210) ;
+    border-radius: 4px;
+}
+#jnavbar input {
+    margin: auto 0px;
+    height: 30px;
+    width: 400px;
+}
+#jnavbar p a{
+    margin: 6px;
+    font-size: 14px;
+    color: rgb(39, 38, 38);
+    text-decoration: none;
+}
+#jnavbar p a:hover{
+    color: rgb(107, 107, 236);
+    text-decoration: underline;
+}
+#explore{
+    margin: auto 7px;
+    border: 2px solid black;
+    padding:0 13px;
+    font-weight: bold;
+}
+#search{
+    
+}
